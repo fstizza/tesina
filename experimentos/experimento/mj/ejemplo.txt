@@ -1,0 +1,60 @@
+python .\main.py alta admin admin pedro 1234567 1000
+python .\main.py alta admin admin pedro 1234567@ 1000
+python .\main.py alta admin admin pedro 12345678 1000
+python .\main.py alta admin admin pedro 12345679 1000
+python .\main.py alta admin admin pedro 12345678 1000
+
+python .\main.py saldo pedro 12345678
+python .\main.py saldo pedro 12345679
+python .\main.py saldo pedri 12345678
+
+
+python .\main.py carga admi admin 4000
+python .\main.py carga admin admi 4000
+python .\main.py carga admin admin 4000
+
+
+python .\main.py clave pedro 12345678 123
+python .\main.py clave pedro 12345678 1234567@
+python .\main.py clave pedro 12345678 12345678
+python .\main.py clave pedro 12345678 23456789
+
+
+python .\main.py alta admin admin fede 1234567 90000
+python .\main.py alta admin admin fede 1234567@ 90000
+python .\main.py alta admin admin fede 12345678 90000
+python .\main.py alta admin admin fede 12345679 90000
+python .\main.py alta admin admin fede 12345678 90000
+
+python .\main.py clave fede 12345678 123
+python .\main.py clave fede 12345678 1234567@
+python .\main.py clave fede 12345678 12345678
+python .\main.py clave fede 12345678 45678901
+
+
+python .\main.py extraccion fede 45678901 300
+python .\main.py extraccion fede 45678901 300
+python .\main.py extraccion fede 45678901 300
+python .\main.py extraccion fede 45678901 100
+
+python .\main.py saldo fede 45678901
+
+python .\main.py extraccion fede 45678901 111100
+python .\main.py extraccion fede 45678901 4100
+
+python .\main.py extraccion pedro 23456789 300
+
+python .\main.py saldo pedro 23456789
+
+python .\main.py carga admin admin 4000000
+python .\main.py extraccion fede 45678901 111100
+python .\main.py extraccion fede 45678901 4100
+
+python .\main.py movimientos admin admin fede "15/08/23 08:00:00" "15/08/23 09:00:04" 
+python .\main.py movimientos admin admin fede "15/08/23 08:00:00" "15/08/23 09:00:00" 
+python .\main.py movimientos admin admin pedro "15/08/23 08:56:40" "15/08/23 09:01:21" 
+
+
+
+
+

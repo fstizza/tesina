@@ -1,0 +1,33 @@
+alta usuarios ✓
+
+python main.py alta 40278173 0123456789 dni_pablito clave_pablito Pablito 0
+python main.py alta 40278173 0123456789 dni_juan clave_juan Juan 0
+
+
+cambio de clave ✓ (falta chequear el tipo)
+
+python main.py clave dni_pablito clave_pablito nueva_clave_pablito
+
+
+cambio de clave ✓ 
+
+python main.py saldo dni_pablito clave_pablito
+
+
+cargar cajero ✓
+
+python main.py carga 40278173 0123456789 50
+
+
+extraccion ✓ 
+
+python main.py extraccion dni_pablito clave_pablito 50
+
+
+movimientos ✓ 
+
+python main.py movimientos 40278173 0123456789 dni_pablito '2020-02-09' '2023-08-08'
+
+
+-------------
+Tiempo total: 6 horas

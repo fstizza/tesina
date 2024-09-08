@@ -1,0 +1,7 @@
+**/obj/**
+**/bin/**
+**/__pycache__/**
+**/.vs/**
+**/node_modules/
+**/package-lock.json
+**/estado.json

@@ -1,0 +1,53 @@
+<#
+Tengo una app de consola de .net con los siguientes comandos
+- Extracción | extraccion dni clave monto
+- Cambio de Clave | clave dni actual nueva
+- Consulta de Saldo | saldo dni clave
+- Alta de Usuario | alta dni_administrador clave_administrador dni clave nombre sueldo
+- Carga de Cajero | carga dni_administrador clave_administrador monto
+- Consulta de movimientos | movimientos dni_administrador clave_administrador desde hasta
+
+El usuario adminsitrador de mi sitemas es 42676387 con pass: 1q2w3E**
+
+Quiero generar caso de pruebas para todos los metodos
+El modo de llamado es: dotnet run --project .\Solucion.csproj argumentos
+
+1: Dar de alta un usuario
+    - El dni debe ser unico
+    - La contraseña debe tener 8 acaracteres minimo y 1 numero y 1 letra
+    - El sueldo debe ser mayor a 0
+    - Solo el administrador puede generar un alta
+
+    Genrar casos de prueba para todas las situaciones de error y para un caso de exito, el estado se comparte entre ejecuciones
+#>
+# Caso de prueba 1: Dni repetido
+dotnet run --project .\Solucion.csproj alta 42676387 1q2w3E** 42676387 1q2w3E** "Juan Perez" 10000
+# Caso de prueba 2: Contraseña invalida
+dotnet run --project .\Solucion.csproj alta 42676387 1q2w3E** 42676388 1q2w3E* "Juan Perez" 10000
+# Caso de prueba 3: Sueldo invalido
+dotnet run --project .\Solucion.csproj alta 42676387 1q2w3E** 42676388 1q2w3E** "Juan Perez" 0
+# Caso de prueba 4: Usuario no administrador
+dotnet run --project .\Solucion.csproj alta 42676388 1q2w3E** 42676388 1q2w3E** "Juan Perez" 10000
+# Caso de prueba 5: Usuario administrador
+dotnet run --project .\Solucion.csproj alta 42676387 1q2w3E** 42676388 1q2w3E** "Juan Perez" 10000
+
+<#
+2: Extraer dinero
+    - Debe existir el usuario y la contraseña debe ser correcta
+    - El monto debe ser mayor a 0
+    - El monto debe ser menor a la mitad del sueldo del usuario
+    - El monto debe ser menor al saldo del usuario
+    - El el cajero tiene un saldo de billetes disponibles, en el inicio es de 50.000
+#>
+# Caso de prueba 1: Usuario no existe
+dotnet run --project .\Solucion.csproj extraccion 42676389 1q2w3E** 1000
+# Caso de prueba 2: Contraseña invalida
+dotnet run --project .\Solucion.csproj extraccion 42676387 1q2w3E* 1000
+# Caso de prueba 3: Monto invalido
+dotnet run --project .\Solucion.csproj extraccion 42676387 1q2w3E** 0
+# Caso de prueba 4: Monto mayor a la mitad del sueldo
+dotnet run --project .\Solucion.csproj extraccion 42676387 1q2w3E** 10000
+# Caso de prueba 5: Monto mayor al saldo
+dotnet run --project .\Solucion.csproj extraccion 42676387 1q2w3E** 100000
+# Caso de prueba 6: Deberia funcionar
+dotnet run --project .\Solucion.csproj extraccion 42676388 1q2w3E** 1000

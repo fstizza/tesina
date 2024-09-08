@@ -1,0 +1,19 @@
+
+Cambie algunas cosas del .csproj
+    - <StartupObject> no me funcionaba, lo saque y todo bien
+    - Aumente la version de .net para que soporte serializacion de DateOnly
+Cambie unas cosas del Estado.cs
+    - Haces .Parent.Parent en la ruta, eso no funciona si se ejacuta desde consola, es necesario cuando se ejecuta desde vs o rider, porque ejecutan el codigo dentro de bin/.net
+    - El json serializar necesita que le den options para que incluya los campos de la clsae, si no no funciona
+
+- hay un archivo con "test" pero me dio vagancia seguir, copilot no dio tantas ayudas
+
+- Probe un poco cada operación, no hice much ohincapie, confio en que anda :)
+
+El estado es el siguiente:
+- Usuarios es un diccionario de dni -> usuario, contiene todos los usuarios del sistema
+- Saldos usuarios es un diccionario de dni -> decimal, contiene las cuentas de los usuarios
+- HistoricoMovimientos es una lista ordenada de menor a mayor que almacena los movimientos de caja, si el movimiento es positivo se ingreso dinero, si es negativo se extrajo
+- HistoricoClaves es una lista ordenada de menor a mayor que almacena todos los cambios de contraseña de los usuarios
+- Usuarios admin es un conjunto de dni, si un dni esta en el conjunto significa que es admin
+- SaldoCajero es el saldo actual del cajero
